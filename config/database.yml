@@ -1,8 +1,5 @@
 default: &default
   adapter: postgresql
-  username: evgenia
-  password: 
-  host: localhost
   timeout: 5000
   encoding: unicode
   pool: 5
