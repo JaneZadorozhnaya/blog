@@ -1,25 +1,25 @@
 <%= form_for @article do |f| %>
   <% if @article.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+    <h3 style = 'width: 30%; margin: auto;text-align: left'><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h3>
     <ul>
     <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li style = 'width: 30%; margin: auto;text-align: left'><%= msg %></li>
     <% end %>
     </ul>
   </div>
   <% end %>
-  <p>
+  <p style = 'width: 60%; margin: auto; text-align: center'>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
  
-  <p>
+  <p style = 'width: 60%; margin: auto; text-align: center'>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
  
-  <p>
+  <p style = 'width: 60%; margin: auto; text-align: center'>
     <%= f.submit %>
   </p>
 <% end %>

@@ -1,15 +1,15 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
-	<p>
+	<p style = 'width: 60%; margin: auto; text-align: center'>
 		<%= f.label :commenter %><br>
 		<%= f.text_field :commenter %>
 	</p>
 
-	<p>
+	<p style = 'width: 60%; margin: auto; text-align: center'>
 		<%= f.label :body %><br>
 		<%= f.text_area :body %>
 	</p>
 
-	<p>
+	<p style = 'width: 60%; margin: auto; text-align: center'>
 		<%= f.submit %>
 	</p>
 <% end %>
