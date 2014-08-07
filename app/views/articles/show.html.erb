@@ -1,18 +1,26 @@
-<h2 style = 'width: 60%; margin: auto; text-align: center; border-left: 1px solid grey; border-right: solid 1px grey; border-top: 1px solid grey;'>
-  <strong><%= @article.title %></strong>
-</h3>
- 
-<p style = 'width: 60%; margin: auto; border-left: 1px solid grey; border-right: 1px solid grey; border-bottom: 1px solid grey'>
-  <br><%= @article.text %><br>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
 </p>
- 
-<h3 style = 'padding-top: 5%; width: 60%; margin: auto; text-align: center'>Comments</h2>
+
+<p>
+  <strong>Description:</strong>
+  <%= @article.text %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', article_path %>
+
+
+<h3>Comments</h2>
 <%= render @article.comments %>
  
-<br><h3 style = 'width: 60%; margin: auto; text-align: center'>Add a comment:</h3>
+<br><h3>Add a comment:</h3>
 <%= render "comments/form" %>
  
-<p style = 'padding-top: 5%; width: 60%; margin: auto; text-align: center; z-index: 1'>
+<p>
 	<%= link_to 'Edit Article', edit_article_path(@article) %> |
 	<%= link_to 'Back to Articles', articles_path %>
 </p>

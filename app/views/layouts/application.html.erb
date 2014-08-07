@@ -6,9 +6,35 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
-
-<%= yield %>
-
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">My Blog</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Articles", articles_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="container-fluid">
+  <div class="row">
+    <div class="span9"><%= yield %></div>
+    <div class="span3">
+      <h2>About Me</h2>
+      <p>Eugenia Zadorozhnaya</p>
+    </div>
+  </div>
+</div>
+ 
 </body>
-</html>
