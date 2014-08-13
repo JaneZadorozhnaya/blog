@@ -1,6 +1,9 @@
 Blog::Application.routes.draw do
+  devise_for :users, :controllers => { :sessions => "users/sessions" }
   resources :articles do
     resources :comments
+
+  root :to => 'articles#index'
   end 
   # get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.

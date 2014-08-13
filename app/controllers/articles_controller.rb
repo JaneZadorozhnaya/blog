@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	
-	http_basic_authenticate_with name: 'dhh', password: 'secret', except: [:index, "show"]
+	#http_basic_authenticate_with name: 'dhh', password: 'secret', except: [:index, "show"]
 
 	def new
 		@article = Article.new
@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
+		@article.user = current_user
+		authorize! :create, @article
 
 		if @article.save
 			redirect_to @article
@@ -26,11 +28,14 @@ class ArticlesController < ApplicationController
 
 	def edit
 		@article = Article.find(params[:id])
+		authorize! :edit, @article, :message => 'Unable to edit this article.'
+
 	end
 
 	def update
   		@article = Article.find(params[:id])
- 
+ 		@article.assign_attributes(article_params)
+ 		authorize! :update, @article, :message => 'Unable to update this article.'
   		if @article.update(article_params)
     		redirect_to @article
   		else
@@ -40,8 +45,8 @@ class ArticlesController < ApplicationController
 
 	def destroy
 		@article = Article.find(params[:id])
+		authorize! :destroy, @article, :message => 'Unable to destroy this article.'
 		@article.destroy
-
 		redirect_to articles_path
 	end
 
