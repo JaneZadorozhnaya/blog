@@ -28,14 +28,14 @@ class ArticlesController < ApplicationController
 
 	def edit
 		@article = Article.find(params[:id])
-		authorize! :edit, @article, :message => 'Unable to edit this article.'
+		authorize! :edit, @article, :message => "Unable to edit #{@article.title}"
 
 	end
 
 	def update
   		@article = Article.find(params[:id])
  		@article.assign_attributes(article_params)
- 		authorize! :update, @article, :message => 'Unable to update this article.'
+ 		authorize! :update, @article, :message => "Unable to edit #{@article.title}"
   		if @article.update(article_params)
     		redirect_to @article
   		else
@@ -45,9 +45,10 @@ class ArticlesController < ApplicationController
 
 	def destroy
 		@article = Article.find(params[:id])
-		authorize! :destroy, @article, :message => 'Unable to destroy this article.'
-		@article.destroy
-		redirect_to articles_path
+		authorize! :destroy, @article, :message => "Unable to destroy #{@article.title}"
+		if @article.destroy
+			redirect_to articles_path
+		end
 	end
 
 	private

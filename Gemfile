@@ -29,8 +29,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
-gem 'mailcatcher'
-gem 'cancan'
+#gem 'mailcatcher'
+gem 'cancancan'
+gem 'enumerize'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -41,6 +43,9 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+group :development do
+  gem 'pry-rails'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
