@@ -109,7 +109,7 @@ Blog::Application.configure do
   config.assets.debug = true
 
   #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.default_url_options = { :host => 'gmail.com' }
+  #config.action_mailer.default_url_options = { :host => 'gmail.com' }
   
   
   
@@ -127,6 +127,7 @@ Blog::Application.configure do
                     :password       => "gdrraajepnjtwgxq"
 }
 
+config.action_mailer.default_url_options = { :host => 'intense-lowlands-1465.herokuapp.com' }
 
 
 end
