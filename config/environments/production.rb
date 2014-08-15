@@ -124,7 +124,7 @@ Blog::Application.configure do
                     :port           => 587,
                     :authentication => :plain,
                     :user_name      => "j.ruby.dev@gmail.com",
-                    :password       => "emcmdkfmzcpbofrd"
+                    :password       => "jn4725fv"
 }
 
 
