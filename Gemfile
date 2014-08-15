@@ -18,12 +18,13 @@ group :development do
 	gem 'coffee-rails', '~> 4.0.0'
 
 	# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-	gem 'therubyracer', platforms: :ruby
+	gem 'therubyracer', :platforms => :ruby
 	gem "less-rails"
 	gem 'twitter-bootstrap-rails'
 
 	# Use jquery as the JavaScript library
 	gem 'jquery-rails'
+	gem 'pry-rails'
 end
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -38,6 +39,7 @@ gem 'enumerize'
 
 group :production do
   gem 'therubyracer-heroku'
+  gem 'rails_12factor', '0.0.2'
 end
 
 group :doc do
@@ -45,13 +47,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :production do
-  gem 'rails_12factor', '0.0.2'
-end
 
-group :development do
-  gem 'pry-rails'
-end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
