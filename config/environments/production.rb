@@ -116,7 +116,7 @@ Blog::Application.configure do
   config.action_mailer.perform_deliveries = true # Set it to false to disable the email in dev mode
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  
 
 
   ActionMailer::Base.smtp_settings = {
@@ -124,7 +124,7 @@ Blog::Application.configure do
                     :port           => 587,
                     :authentication => :plain,
                     :user_name      => "j.ruby.dev@gmail.com",
-                    :password       => "jn4725fv"
+                    :password       => "gdrraajepnjtwgxq"
 }
 
 
